@@ -1,0 +1,30 @@
+<h1>Demo#Hello</h1>
+<p>Find me in app/views/demo/index.html.erb</p>
+
+<p>Why hello thereeee</p>
+
+<%= link_to('hello page 2', {:action => 'hello'}) %> <br /> 
+
+<% @array.each do |ar| %>
+	<%= ar %>
+<% end %>
+
+
+<p>Normal Link</p>
+<a href="/demo/index">index page 1</a><br /> 
+
+
+
+<%= link_to('index page 2', {:action => 'index'}) %> <br />
+
+
+ID: <%= params[:id] %> <!--#these are both interchangeable --> <br /> 
+ID: <%= @id %>
+<br /> 
+Page: <%= params[:page] %><br/> 
+Page: <%= @page %>
+
+
+<hr />
+<%= params.inspect %> <!-- this is good for checking --> 
+<%= @id.inspect %>

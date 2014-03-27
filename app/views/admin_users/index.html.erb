@@ -1,0 +1,39 @@
+<!-- page title -->
+<% @page_title = "Admin Users List" %>
+
+<%= link_to("<< Back to Menu", {:controller => 'access', :action => 'index'}, :class => 'back-link') %> <!-- goes to the access view, which displays all of the managing sections --> 
+
+<div class="user index">
+	<h2>Admin Users</h2>
+
+	<%= link_to('Add New Admin User', {:action => 'new'}, :class => 'action new') %> 
+
+	<div><%= pluralize(@admin_users.size, 'Admin Users') %></div>
+	<!-- example, 2 admin users  -->
+
+	<table class="listing" summary="Admin users list">
+			<tr>
+				<th>Username</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Actions</th> <!-- ??  --> 
+			</tr>
+		<% @admin_users.each do |admin_user| %> 
+			<tr class="<%= cycle('odd', 'even') %>"> <!-- zebra striping  --> 
+				<td><%= admin_user.username %> </td>   <!-- we really want to call the name method --> 
+				<td><%= admin_user.name%></td>
+				<td><%= mail_to(admin_user.email) %></td>
+				<td class="actions">
+					<%= link_to('Edit', {:action => 'edit', :id => admin_user.id}, :class => 'action edit') %>
+					<%= link_to('Delete', {:action => 'delete', :id => admin_user.id}, :class => 'action delete') %>
+				</td>
+			</tr>
+		<% end %> 
+	</table>
+</div>
+
+
+	
+	
+
+

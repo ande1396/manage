@@ -1,0 +1,62 @@
+<!-- to see this work, go to demo/text_hlpers in browser --> 
+
+<%
+text = "This is some long sample text. It includes line breaks\n and double-line breaks.\n\n It rambles on and on and on.\n\n Until we get to this last line."
+%>
+<!-- assinging some sample text to the variable text --> 
+
+<!-- everytime the text you greater than 30 characters, helper will add a backlsash in. --> 
+
+<h2>word_wrap</h2>
+<%= word_wrap(text, :line_width => 30) %>
+<hr />
+
+
+<h2>simple_format</h2>
+<%= simple_format(text) %>
+<hr />
+
+<!--Below does what we want in HTML format --> 
+<h2>simple_format + word_wrap</h2>
+<%= simple_format(word_wrap(text, :line_width => 30)) %>
+<hr />
+
+<!-- truncates the text --> 
+<h2>truncate</h2>
+<%= truncate(text, :length => 40, :omission => "...") %>
+<hr />
+
+<h2>excerpt</h2>
+<%= excerpt(text, 'includes', :radius => 7, :omission => "...") %>
+<hr />
+
+<!-- ^  radius 7 characters before and after --> 
+
+<h2>highlight</h2>
+<%= highlight(text, 'sample text') %>
+<hr />
+<%= highlight(text, ['sample', 'rambles'],
+:highlighter => '<em>\1</em>') %>
+<hr />
+
+
+<!-- helpful for getting the plural of words, helpful when we work with databases, --> 
+<h2>pluralize</h2>
+<%= "student".pluralize %><br />
+<%= "ox".pluralize %><br />
+<br />
+<%= pluralize(2, 'product') %><br /> <!--2 products --> 
+<br />
+<% [0, 1, 20].each do |n| %>
+  <%= pluralize(n, 'product') %><br />
+  <%= pluralize(n, 'octopus') %><br />
+  <%= pluralize(n, 'snipe', 'snope') %><br /> <!-- for something made up, no plural for snipe, so the 3rd value is whhat we assign to it --> 
+<% end %>
+<hr />
+
+
+<h2>cycle</h2>
+<% 5.times do %>
+  <%= cycle('red', 'green', 'blue') %><br />
+<% end %>
+

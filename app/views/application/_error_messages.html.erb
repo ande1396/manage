@@ -1,0 +1,14 @@
+<% if object && object.errors.size > 0 %> 
+	<div id="errorExplanation">
+		<h2><%= pluralize(object.errors.size, "error") %> prohibited this record from being saved</h2>
+		<p>There were some problems with the following fields:</p>
+		<ul>
+			<% object.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	
+	</div>
+	<% end %> 
+
+	<!--  if we do have some errors on this object, then we will disaply this object error html, will say 1 error or 2 errors prohibted this record from being saved      --> 

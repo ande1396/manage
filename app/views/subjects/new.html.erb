@@ -1,0 +1,39 @@
+<% @page_title = "New Subject" %> <!-- setting the variable == to the string subjects--> 
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="subjects new">
+	<h2>Create Subject</h2>
+
+	<%= form_for(:subject, :url => {:action => 'create'}) do |f| %>
+
+<!-- 	<table summary="Subject form fields">
+		<tr>
+			<th>Name</th>
+			<td><%= f.text_field(:name) %></td>
+		</tr>
+		<tr>
+			<th>Position</th>
+			<td><%= f.text_field(:position) %></td>
+		</tr>
+		<tr>
+			<th>Visible?</th>
+			<td><%= f.text_field(:visible) %></td>
+		</tr>
+	</table> -->
+	<%= render(:partial => "form", :locals => {:f => f}) %> <!-- rails knows to add the _ --> 
+	<!-- the :f goes to what is on the partials, could be foo or anything, the second f goes to the one in the form for--> 
+
+	<div class="form-buttons">
+		<%= submit_tag("Create Subject") %>
+	</div>
+
+<% end %> 
+
+<!-- the url is going to ne for the action create, where we are submitting the form, f is the local variable, which is the subject object --> 
+
+
+<!-- if you dont instaniate the subject on the new part of the subjects controler, there will be nothing in the visible text field, if you do, it will display whatever the value is --> 
+
+<!-- form_for is going to look for an instance variable @ subject, if i  cant find it it leaves the fields blank, best pratice is to instantiate it always  --> 
+
+</div>

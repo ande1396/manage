@@ -1,0 +1,25 @@
+<h1>Main Index</h1>
+
+
+<p>Hello from the index</p>
+
+<p>Normal Link</p>
+<a href="demo/hello">hello page 1</a><br /> 
+
+<%= link_to('hello page 2', {:action => 'hello'}) %> <br /> 
+
+<%= link_to('hello with parameters', {:action => 'hello', :page => 5, :id => 20}) %> <br />
+
+
+<% name = 'Kyle' %> 
+
+<%= link_to('Roar', '#', :onclick => "jsRoar('#{j(name)}'); return true;") %>
+<%#= link_to('Roar', '#', :onclick => "jsRoar('JavaScript'); return true;") %>
+ <!-- always a good idea when using onclick to return true at the end -->
+
+
+<%= javascript_tag("jsRoar('Rails');") %> 
+<!-- this code will be executed when the page loads --> 
+
+
+

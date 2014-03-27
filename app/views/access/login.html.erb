@@ -1,0 +1,28 @@
+<% @page_title = "Admin Login" %> 
+
+
+<div class="login">
+	<%= form_tag(:action => 'attempt_login') do %> 
+	<table>
+		<tr>
+			<td><%= label_tag(:username) %> </td> <!-- label_for = "username" --> 
+			<td><%= text_field_tag(:username) %> </td> <!-- input type="text" --> 
+		</tr>
+		<tr>
+			<td><%= label_tag(:password) %> </td>
+			<td><%= password_field_tag(:password) %> </td>
+			   <!-- password field tag will not display it as you type   --> 
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><%= submit_tag("Log In") %> </td>
+
+		</tr>
+
+	</table>
+	<% end %> 
+
+
+
+
+</div>

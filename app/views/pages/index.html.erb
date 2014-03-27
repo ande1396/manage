@@ -1,0 +1,42 @@
+<% @page_title = "Pages" %> <!-- setting the variable == to the string subjects--> 
+<!-- flash is now on the admin.html.erb --> 
+
+<%= link_to("<< Back to Subject", {:controller => 'subjects', :action => 'index'}, :class => 'back-link') %>
+
+<div class="pages index">
+  <h2>Pages</h2>
+
+  <%= link_to("Add New Page", {:action => 'new', :subject_id => @subject.id}, :class => 'action new') %>
+
+  <table class="listing" summary="Page list">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Subject</th>
+      <th>Page</th>
+      <th>Permalink</th>
+      <th>Visible</th>
+      <th>Sections</th>
+      <th>Actions</th>
+    </tr>
+    <% @pages.each do |page| %>
+    <tr>
+      <td><%= page.position %></td>
+      <td><%= page.subject.name if page.subject %></td> <!-- 1--> 
+      <td><%= page.name %></td>
+      <td><%= page.permalink %></td>
+      <td class="center"><%= status_tag(page.visible) %></td>
+      <td class="center"><%= page.sections.size %></td>
+      <td class="actions">
+        <%= link_to("View Sections", {:controller => 'sections', :page_id => page.id}, :class => 'action show') %>
+        <%= link_to("Show", {:action => 'show', :id => page.id, :subject_id => @subject.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => page.id, :subject_id => @subject.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => page.id, :subject_id => @subject.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<!-- #1 dont need to know on the screen which subject id, just show the name, the rest can be done behind the scenes. the if is for if the page has a subject, if not it will be blank --> 
+
+<!-- we need to pass the subject id for all of the things above because I was getting an error. Need to add a new page for that specific subject --> 
