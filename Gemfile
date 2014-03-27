@@ -34,9 +34,9 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
- gem 'bcrypt'
+gem 'bcrypt', '~> 3.1.7'
 
- gem 'acts_as_list', '~> 0.4.0'
+gem 'acts_as_list', '~> 0.4.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'
