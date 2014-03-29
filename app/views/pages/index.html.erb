@@ -19,7 +19,7 @@
       <th>Actions</th>
     </tr>
     <% @pages.each do |page| %>
-    <tr>
+    <tr class="<%= cycle('odd', 'even') %>">
       <td><%= page.position %></td>
       <td><%= page.subject.name if page.subject %></td> <!-- 1--> 
       <td><%= page.name %></td>

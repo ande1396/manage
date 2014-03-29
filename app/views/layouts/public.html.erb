@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Blogging<%= " | #{@page_title}" if @page_title %></title>
+    <title> Blogging Platform<%= " | #{@page_title}" if @page_title %></title>
     <%= stylesheet_link_tag('application', :media => 'all') %>
   </head>
   <body>
     <div id="header">
-      <h1>About Blog </h1>
+      <%= link_to "Blogging Platform", root_path, {:class => "h1"} %>
     </div>
     <div id="main">
       <div id="navigation">
+        <h2>Blog Archive</h2>
       	<%= render(:partial => 'layouts/navigation', :locals => {:subjects => @subjects}) %> 
       </div>
       <div id="content">
@@ -18,7 +19,7 @@
       <div class="clear"></div>
     </div>
     <div id="footer">
-      <p id="copyright">&copy; Kyle Ande</p>
+      <p id="copyright">&copy; Kyle Anderson</p>
     </div>
   </body>
 </html>
