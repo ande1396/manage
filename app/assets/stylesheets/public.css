@@ -51,7 +51,7 @@ a:hover {
 	height: 6em; 
 	padding-top: .2em; 
 	text-align: center; 
-  	background: #2bbc8b; 
+  	background: #22765a; 
   	color: #FFFFFF; 
 
 }
@@ -94,7 +94,7 @@ a:hover {
 	clear: both; 
 	height: 2.5em; 
 	text-align: right;
-    background: #2bbc8b; 
+    background: #22765a; 
   	color: #FFFFFF;  
  }
 #footer p { 
@@ -139,4 +139,9 @@ a:hover {
 	}
 .welcome {
 	font-size: 38px;
+}
+
+.section {
+	width: 800px;
+	margin-left: 200px;
 }
