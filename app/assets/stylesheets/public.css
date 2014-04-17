@@ -101,6 +101,13 @@ a:hover {
 	margin: 0; 
 	padding: 0.5em 1em; 
 }
+#footer p a { 
+	clear: both; 
+	height: 2.5em; 
+	text-align: right;
+    background: #22765a; 
+  	color: #FFFFFF;  
+ }
 
 /* Navigation */
 #navigation ul { 
